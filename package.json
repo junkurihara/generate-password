@@ -1,9 +1,13 @@
 {
-  "name": "generate-password-fork",
+  "name": "generate-password-ts",
   "version": "1.6.0",
   "description": "Easy library for generating unique passwords. Compatible with node.js and browsers. Forked from original Node.js version.",
   "main": "dist/index.js",
   "scripts": {
+    "flow:version": "npm version --no-git-tag-version",
+    "release:start": "./node_modules/.bin/can-npm-publish --vorbose && git flow release start v$npm_package_version",
+    "release:finish": "git flow release finish v$npm_package_version",
+    "release:push": "git push --all && git push origin v$npm_package_version",
     "test": "yarn jest:node",
     "jest:node": "jest -c ./jest.config.node.js",
     "jest:web": "jest -c ./jest.config.web.js",
