@@ -1,6 +1,6 @@
 {
   "name": "generate-password-ts",
-  "version": "1.6.0",
+  "version": "1.6.1",
   "description": "Easy library for generating unique passwords. Compatible with node.js and browsers. Forked from original Node.js version.",
   "main": "dist/index.js",
   "scripts": {
@@ -36,26 +36,26 @@
   },
   "homepage": "https://github.com/junkurihara/generate-password",
   "devDependencies": {
-    "@types/jest": "26.0.20",
-    "@types/node": "14.14.34",
-    "@types/underscore": "^1.11.0",
-    "@typescript-eslint/eslint-plugin": "4.17.0",
-    "@typescript-eslint/parser": "4.17.0",
+    "@types/jest": "26.0.22",
+    "@types/node": "14.14.37",
+    "@types/underscore": "1.11.0",
+    "@typescript-eslint/eslint-plugin": "4.20.0",
+    "@typescript-eslint/parser": "4.20.0",
     "cross-env": "7.0.3",
-    "eslint": "7.22.0",
-    "jasmine-core": "3.6.0",
+    "eslint": "7.23.0",
+    "jasmine-core": "3.7.1",
     "jest": "26.6.3",
-    "karma": "6.2.0",
+    "karma": "6.3.2",
     "karma-chrome-launcher": "3.1.0",
     "karma-cli": "2.0.0",
     "karma-jasmine": "4.0.1",
-    "karma-typescript": "5.5.0",
-    "ts-jest": "26.5.3",
-    "ts-loader": "8.0.18",
+    "karma-typescript": "5.5.1",
+    "ts-jest": "26.5.4",
+    "ts-loader": "8.1.0",
     "typescript": "4.2.3",
     "underscore": "1.12.1",
-    "webpack": "5.25.1",
-    "webpack-cli": "4.5.0"
+    "webpack": "5.28.0",
+    "webpack-cli": "4.6.0"
   },
   "dependencies": {
     "js-crypto-random": "1.0.2"
