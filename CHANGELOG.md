@@ -1,3 +1,6 @@
+# 1.6.0-ts / 2021-4-1
+Totally written sources and tests in TypeScript. Now it works not only on Node.js but also on browsers without crypto-browserify. Add "\" (backslash) and "'" (single quote) as candidate symbols.
+
 # 1.6.0 / 2021-1-14
 Add specifying a list of symbols to substitute defaults.
 
