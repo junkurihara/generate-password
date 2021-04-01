@@ -1,13 +1,27 @@
-# Generate Password [![Build Status](https://travis-ci.org/brendanashworth/generate-password.svg?branch=master)](https://travis-ci.org/brendanashworth/generate-password) [![codecov](https://codecov.io/gh/brendanashworth/generate-password/branch/master/graph/badge.svg)](https://codecov.io/gh/brendanashworth/generate-password)
 
-[![Generate-Password NPM](https://nodei.co/npm/generate-password.png?downloads=true&downloadRank=true)](http://npmjs.org/package/generate-password)
+
+# Generate Password TS
+[![npm version](https://badge.fury.io/js/generate-password-ts.svg)](https://badge.fury.io/js/generate-password-ts)
+[![CircleCI](https://circleci.com/gh/junkurihara/generate-password.svg?style=svg)](https://circleci.com/gh/junkurihara/generate-password)
+[![Dependencies](https://david-dm.org/junkurihara/generate-password.svg)](https://david-dm.org/junkurihara/generate-password)
+[![codecov](https://codecov.io/gh/junkurihara/generate-password/branch/develop/graph/badge.svg)](https://codecov.io/gh/junkurihara/generate-password)
+
+> This library `generate-password-ts` was forked from the original Node.js version `generate-password`:
+> [https://github.com/brendanashworth/generate-password](https://github.com/brendanashworth/generate-password).
+> This forked version was totally re-written in TypeScript from the original JS version and supports not only Node.js but also browsers without need of `crypto-browserify`.
 
 > Generate Password is a (relatively) extensive library for generating random and unique passwords.
 
 ## Install
 
 ```bash
-$ npm install generate-password --save
+$ npm install generate-password-ts --save
+```
+
+or
+
+```bash
+$ yarn add generate-password-ts
 ```
 
 ## Usage

@@ -1,0 +1,101 @@
+# Javascript Node CircleCI 2.0 configuration file
+#
+# Check https://circleci.com/docs/2.0/language-javascript/ for more details
+# https://circleci.com/blog/publishing-npm-packages-using-circleci-2-0/
+version: 2.1
+defaults: &defaults
+  working_directory: ~/repo
+  docker:
+    # specify the version you desire here
+    - image: circleci/node:lts-browsers
+      auth:
+        username: $DOCKERHUB_USER
+        password: $DOCKERHUB_TOKEN
+
+    # Specify service dependencies here if necessary
+    # CircleCI maintains a library of pre-built images
+    # documented at https://circleci.com/docs/2.0/circleci-images/
+    # - image: circleci/mongo:3.4.4
+
+orbs:
+  codecov: codecov/codecov@1.1.3
+
+jobs:
+  test:
+    <<: *defaults
+    steps:
+      - checkout
+
+      - run:
+          name: update-npm
+          command: 'sudo npm install -g npm@latest'
+
+      # Download and cache dependencies
+      - restore_cache:
+          keys:
+          - v1-dependencies-{{ checksum "package.json" }}
+          # fallback to using the latest cache if no exact match is found
+          - v1-dependencies-
+
+      - run:
+          name: 'package install'
+          command: yarn install
+
+      - save_cache:
+          paths:
+            - node_modules
+          key: v1-dependencies-{{ checksum "package.json" }}
+
+      # run tests!
+      - run: yarn test
+      - run: yarn karma
+      - run: sudo apt install lcov
+      - run: find ./coverage  -name lcov.info -exec echo -a {} \; | xargs lcov -o ./coverage/merged-lcov.info
+      - codecov/upload:
+          file: ./coverage/merged-lcov.info
+
+      - store_artifacts:
+          path: ./coverage
+          destination: coverage-report
+
+      # to share workspase among workflow jobs
+      - persist_to_workspace:
+          root: ~/repo
+          paths: .
+
+  publish:
+    <<: *defaults
+    steps:
+    - attach_workspace:
+        at: ~/repo
+    - run:
+        name: Authenticate with registry
+        command: echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > ~/repo/.npmrc
+    - run:
+        name: Build production module
+        command: yarn build
+    - run:
+        name: Publish package
+        command: npm publish
+
+
+workflows:
+  version: 2
+  test-publish:
+    jobs:
+    - test:
+        context:
+          - docker-hub-cred
+        filters:
+          tags:
+            only: /^v[0-9]+(\.[0-9]+)*/
+    - publish:
+        context:
+          - docker-hub-cred
+        requires:
+          - test
+        filters:
+          tags:
+            only: /^v[0-9]+(\.[0-9]+)*/
+          branches:
+            ignore: /.*/
