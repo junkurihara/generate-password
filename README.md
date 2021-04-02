@@ -24,6 +24,16 @@ or
 $ yarn add generate-password-ts
 ```
 
+For browsers, you can use `node_modules/generate-password-ts/dist/generate-password-ts.bundle.js` via `script` tags. If you simply import it at your code and use `webpack` (v5+), `crypto-browserify` should be explicitly ignored by specifying
+
+```javascript
+resolve: {
+  fallback: { 'crypto': false }
+}
+```
+
+in `webpack.config.js`.
+
 ## Usage
 
 #### `generate([options])`
