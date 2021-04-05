@@ -41,9 +41,9 @@ in `webpack.config.js`.
 Generate one password with the given options. Returns a string.
 
 ```javascript
-var generator = require('generate-password');
+import generator from 'generate-password';
 
-var password = generator.generate({
+const password = generator.generate({
 	length: 10,
 	numbers: true
 });
@@ -57,9 +57,9 @@ console.log(password);
 Bulk generate multiple passwords at once, with the same options for all. Returns an array.
 
 ```javascript
-var generator = require('generate-password');
+import generator from 'generate-password';
 
-var passwords = generator.generateMultiple(3, {
+const passwords = generator.generateMultiple(3, {
 	length: 10,
 	uppercase: false
 });
