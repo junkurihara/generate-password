@@ -2,8 +2,7 @@
  * generate.ts
  */
 import jscr from 'js-crypto-random';
-
-// var self = module.exports;
+import { Options } from './Options';
 
 const RANDOM_BATCH_SIZE = 256;
 
@@ -78,17 +77,6 @@ const generateLocal = (options: Options, pool: string): string => {
 
   return password;
 };
-
-export interface Options {
-	length?: number;
-	numbers?: boolean;
-	symbols?: boolean|string;
-	exclude?: string;
-	uppercase?: boolean;
-	lowercase?: boolean;
-	excludeSimilarCharacters?: boolean;
-	strict?: boolean;
-}
 
 // Generate a random password.
 export const generate = (options: Options): string => {
