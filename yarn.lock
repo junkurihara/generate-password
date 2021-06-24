@@ -1569,12 +1569,13 @@ camelcase@^6.2.0:
   resolved "https://registry.yarnpkg.com/camelcase/-/camelcase-6.2.0.tgz#924af881c9d525ac9d87f40d964e5cea982a1809"
   integrity sha512-c7wVvbw3f37nuobQNtgsgG9POC9qMbNuMQmTCqZv23b6MIz0fcYpBiOlv9gEN/hdLdnZTDQhg6e9Dq5M1vKvfg==
 
-can-npm-publish@1.3.4:
-  version "1.3.4"
-  resolved "https://registry.yarnpkg.com/can-npm-publish/-/can-npm-publish-1.3.4.tgz#b1b2c5bcc88d35250ef7e786d39c195042cec010"
-  integrity sha512-75dHFCDrJfHZTPhyAjWUnU9ZJXG8NIHe4YgyemmRTCuO7YFZGRFrJMPwIwkLP1eIxNmVOt6yiENr33VMfvMcHw==
+can-npm-publish@1.3.5:
+  version "1.3.5"
+  resolved "https://registry.yarnpkg.com/can-npm-publish/-/can-npm-publish-1.3.5.tgz#327997bb3e7401a7755a317e1a25cf286552ea3a"
+  integrity sha512-g6CfJFLD1WTjI8M/XU3Yy6i5Cs+JZa9eyWNhvq4GgvDFhEOQyLpnQxU5DymMp7iJHgOV5+6S7TclnMyGdZ5cjw==
   dependencies:
     cross-spawn "^7.0.3"
+    extract-first-json "^1.0.1"
     meow "^9.0.0"
     read-pkg "^5.0.0"
     validate-npm-package-name "^3.0.0"
@@ -2404,6 +2405,14 @@ extend@^3.0.0:
   version "3.0.2"
   resolved "https://registry.yarnpkg.com/extend/-/extend-3.0.2.tgz#f8b1136b4071fbd8eb140aff858b1019ec2915fa"
   integrity sha512-fjquC59cD7CyW6urNXK0FBufkZcoiGG80wTuPujX590cB5Ttln20E2UB4S/WARVqhXffZl2LNgS+gQdPIIim/g==
+
+extract-first-json@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/extract-first-json/-/extract-first-json-1.0.1.tgz#be828615ac0c83c982f22d8c93063e4f9dc2a356"
+  integrity sha512-L4XmAoZaHyXawEy8fJuLfIjRH9rG9D3bLz6fiMepVMiw/0Mpu+OSYH3/XmJ6sCPjui8a8ayz6c46fWlQFhdLvA==
+  dependencies:
+    parse-json-object "^2.0.0"
+    reduce-first "^1.0.1"
 
 fast-deep-equal@^3.1.1, fast-deep-equal@^3.1.3:
   version "3.1.3"
@@ -4196,6 +4205,13 @@ parse-asn1@^5.0.0, parse-asn1@^5.1.5:
     pbkdf2 "^3.0.3"
     safe-buffer "^5.1.1"
 
+parse-json-object@^2.0.0:
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/parse-json-object/-/parse-json-object-2.0.1.tgz#a441bd8c36d2c33a69516286e7e4138a23607ee0"
+  integrity sha512-/oF7PUUBjCqHmMEE6xIQeX5ZokQ9+miudACzPt4KBU2qi6CxZYPdisPXx4ad7wpZJYi2ZpcW2PacLTU3De3ebw==
+  dependencies:
+    types-json "^1.2.0"
+
 parse-json@^5.0.0:
   version "5.2.0"
   resolved "https://registry.yarnpkg.com/parse-json/-/parse-json-5.2.0.tgz#c76fc66dee54231c962b22bcc8a72cf2f99753cd"
@@ -4470,6 +4486,11 @@ redent@^3.0.0:
   dependencies:
     indent-string "^4.0.0"
     strip-indent "^3.0.0"
+
+reduce-first@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/reduce-first/-/reduce-first-1.0.1.tgz#ef934f0dd4e010fdcaec2c51c9027722ee810c1c"
+  integrity sha512-/jBjEiF5Oe1xsa7CeCscbOIxSlFJcn4h1gj3OvUHPtxnThCbZ1Wh72uqO/o1zHNSGU4EgFclvCdc5TLJyt1hOQ==
 
 regexpp@^3.1.0:
   version "3.1.0"
@@ -5117,6 +5138,11 @@ typedarray-to-buffer@^3.1.5:
   integrity sha512-zdu8XMNEDepKKR+XYOXAVPtWui0ly0NtohUscw+UmaHiAWT8hrV1rr//H6V+0DvJ3OQ19S979M0laLfX8rm82Q==
   dependencies:
     is-typedarray "^1.0.0"
+
+types-json@^1.2.0:
+  version "1.2.2"
+  resolved "https://registry.yarnpkg.com/types-json/-/types-json-1.2.2.tgz#91ebe6de59e741ab38a98b071708a29494cedfe6"
+  integrity sha512-VfVLISHypS7ayIHvhacOESOTib4Sm4mAhnsgR8fzQdGp89YoBwMqvGmqENjtYehUQzgclT+7NafpEXkK/MHKwA==
 
 typescript@4.3.4:
   version "4.3.4"
