@@ -1586,10 +1586,10 @@ camelcase@^6.2.0:
   resolved "https://registry.yarnpkg.com/camelcase/-/camelcase-6.2.0.tgz#924af881c9d525ac9d87f40d964e5cea982a1809"
   integrity sha512-c7wVvbw3f37nuobQNtgsgG9POC9qMbNuMQmTCqZv23b6MIz0fcYpBiOlv9gEN/hdLdnZTDQhg6e9Dq5M1vKvfg==
 
-can-npm-publish@1.3.5:
-  version "1.3.5"
-  resolved "https://registry.yarnpkg.com/can-npm-publish/-/can-npm-publish-1.3.5.tgz#327997bb3e7401a7755a317e1a25cf286552ea3a"
-  integrity sha512-g6CfJFLD1WTjI8M/XU3Yy6i5Cs+JZa9eyWNhvq4GgvDFhEOQyLpnQxU5DymMp7iJHgOV5+6S7TclnMyGdZ5cjw==
+can-npm-publish@1.3.6:
+  version "1.3.6"
+  resolved "https://registry.yarnpkg.com/can-npm-publish/-/can-npm-publish-1.3.6.tgz#94e54621e8fde0646230239311a77491e1354d2f"
+  integrity sha512-geMBfsTBe7KO/vzeggU4oEXRFFVLtxZT7MUhQ7T1zZb+22ip6+n5if92EXvgULQFleJV4rNmu9P34UD3miGd7Q==
   dependencies:
     cross-spawn "^7.0.3"
     extract-first-json "^1.0.1"
