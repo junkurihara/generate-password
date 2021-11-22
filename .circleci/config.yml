@@ -27,7 +27,7 @@ jobs:
     steps:
       - browser-tools/install-chrome
       - browser-tools/install-chromedriver
-      
+
       - checkout
 
       - run:
@@ -96,6 +96,7 @@ workflows:
     - publish:
         context:
           - docker-hub-cred
+          - npm
         requires:
           - test
         filters:
