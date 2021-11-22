@@ -1,9 +1,8 @@
 
-
 # Generate Password TS
+
 [![npm version](https://badge.fury.io/js/generate-password-ts.svg)](https://badge.fury.io/js/generate-password-ts)
 [![CircleCI](https://circleci.com/gh/junkurihara/generate-password.svg?style=svg)](https://circleci.com/gh/junkurihara/generate-password)
-[![Dependencies](https://david-dm.org/junkurihara/generate-password.svg)](https://david-dm.org/junkurihara/generate-password)
 [![codecov](https://codecov.io/gh/junkurihara/generate-password/branch/develop/graph/badge.svg)](https://codecov.io/gh/junkurihara/generate-password)
 
 > This library `generate-password-ts` was forked from the original Node.js version `generate-password`:
@@ -41,9 +40,9 @@ in `webpack.config.js`.
 Generate one password with the given options. Returns a string.
 
 ```javascript
-var generator = require('generate-password');
+import generator from 'generate-password';
 
-var password = generator.generate({
+const password = generator.generate({
 	length: 10,
 	numbers: true
 });
@@ -57,9 +56,9 @@ console.log(password);
 Bulk generate multiple passwords at once, with the same options for all. Returns an array.
 
 ```javascript
-var generator = require('generate-password');
+import generator from 'generate-password';
 
-var passwords = generator.generateMultiple(3, {
+const passwords = generator.generateMultiple(3, {
 	length: 10,
 	uppercase: false
 });
