@@ -3608,17 +3608,17 @@ jest@27.3.1:
     import-local "^3.0.2"
     jest-cli "^27.3.1"
 
-js-crypto-env@^1.0.2:
-  version "1.0.2"
-  resolved "https://registry.yarnpkg.com/js-crypto-env/-/js-crypto-env-1.0.2.tgz#0d94b853ba1f5de7887d34d8d38726b342da34de"
-  integrity sha512-DWCU5bAMCUdbwexTmtoqIzOXvvYOZS1yXzHLSwnc1XLG3vs5b52N3C69w8FzP6rTdBaNLdiftsfPnjKX6dH8Sg==
+js-crypto-env@^1.0.3:
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/js-crypto-env/-/js-crypto-env-1.0.3.tgz#1d545b49fc2d7a13649a6b4e8a21b5ac290cf51f"
+  integrity sha512-AQnOCVXSe6cx6UlO06Ks+26I/BrHlpJ2MJgM2Ujj25WAQZEVYShKDIk7teDg5A27kcaoHrsxrxG0SfP9EAm72g==
 
-js-crypto-random@1.0.2:
-  version "1.0.2"
-  resolved "https://registry.yarnpkg.com/js-crypto-random/-/js-crypto-random-1.0.2.tgz#79945b1252802dcca231a4f5c6b788c106e6eecf"
-  integrity sha512-bJ31lo2YrxOJIRnT/XPzUu2O43/7uGWAzAtXmAi09Oq6Jmrd2uVy8wII/WH3thezhZvjdU85fVtySSeD1Y2/dQ==
+js-crypto-random@1.0.3:
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/js-crypto-random/-/js-crypto-random-1.0.3.tgz#d47f8d9246ccbd5190206e8975bb29a64298ce41"
+  integrity sha512-XotiRPgdGoj4FVj1Dg97bkkucZfJ4q+0Y9eJi/7fatdTjmewo3sfLJBYb0k+hlDHZCmQ0QkW3Oac9YFTlb019g==
   dependencies:
-    js-crypto-env "^1.0.2"
+    js-crypto-env "^1.0.3"
 
 js-tokens@^4.0.0:
   version "4.0.0"
