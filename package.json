@@ -1,6 +1,6 @@
 {
   "name": "generate-password-ts",
-  "version": "1.6.2",
+  "version": "1.6.3",
   "description": "Easy library for generating unique passwords. Compatible with node.js and browsers. Forked from original Node.js version.",
   "main": "dist/index.js",
   "scripts": {
