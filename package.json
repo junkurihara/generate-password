@@ -34,7 +34,6 @@
   },
   "homepage": "https://github.com/junkurihara/generate-password",
   "devDependencies": {
-    "@peculiar/webcrypto": "1.2.3",
     "@types/jest": "27.0.3",
     "@types/node": "16.11.12",
     "@types/underscore": "1.11.4",

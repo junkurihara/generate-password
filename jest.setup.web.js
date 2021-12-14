@@ -1,5 +1,4 @@
 // jest.setup.js
-const Crypto = require('@peculiar/webcrypto').Crypto;
-// import { Crypto } from '@peculiar/webcrypto';
+const crypto = require('crypto').webcrypto;
 
-global.crypto = new Crypto();
+global.crypto = crypto;
