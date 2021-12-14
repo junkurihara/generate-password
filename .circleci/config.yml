@@ -52,7 +52,7 @@ jobs:
 
       # run tests!
       - run: yarn test
-      - run: yarn karma
+      - run: yarn jset:web
       - run: sudo apt update && sudo apt install lcov
       - run: find ./coverage  -name lcov.info -exec echo -a {} \; | xargs lcov -o ./coverage/merged-lcov.info
       - codecov/upload:

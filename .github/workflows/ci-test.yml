@@ -52,8 +52,8 @@ jobs:
       - name: Test with jest for Node.js
         run: yarn test
 
-      - name: Test with karma for browsers
-        run: yarn karma
+      - name: Test with jest with webcrypto shim for browsers
+        run: yarn jest:web
 
 #      - name: Install lcov
 #        run: sudo apt install lcov
