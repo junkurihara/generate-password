@@ -4,7 +4,6 @@ import {uniq} from 'underscore';
 import {getTestEnv} from './prepare';
 const env = getTestEnv();
 const generator = env.library;
-
 describe('generate-password', () => {
   describe('generate()', () => {
     it('should accept to be called without the options parameter', () => {
