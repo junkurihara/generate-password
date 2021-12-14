@@ -14,6 +14,7 @@ webpack.config.js
 webpack.tsconfig.json
 jest.config.node.js
 jest.config.web.js
+jest.setup.web.js
 tsconfig.json
 .idea/
 .vscode/
