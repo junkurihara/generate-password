@@ -51,6 +51,6 @@
     "webpack-cli": "4.9.2"
   },
   "dependencies": {
-    "js-crypto-random": "1.0.3"
+    "js-crypto-random": "1.0.4"
   }
 }
