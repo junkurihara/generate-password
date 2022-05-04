@@ -20,6 +20,7 @@ defaults: &defaults
 orbs:
   codecov: codecov/codecov@3.2.2
   browser-tools: circleci/browser-tools@1.3.0
+  node: circleci/node@5.0.2
 
 jobs:
   test:
@@ -30,9 +31,11 @@ jobs:
 
       - checkout
 
-      - run:
-          name: update-npm
-          command: 'sudo npm install -g npm@latest'
+      - node/install-packages:
+          pkg-manager: yarn
+
+      - node/install-packages:
+          pkg-manager: npm
 
       # Download and cache dependencies
       - restore_cache:
