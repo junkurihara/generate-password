@@ -35,7 +35,7 @@
   "homepage": "https://github.com/junkurihara/generate-password",
   "devDependencies": {
     "@types/jest": "29.4.0",
-    "@types/node": "18.14.4",
+    "@types/node": "18.14.6",
     "@types/underscore": "1.11.4",
     "@typescript-eslint/eslint-plugin": "5.54.0",
     "@typescript-eslint/parser": "5.54.0",
