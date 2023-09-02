@@ -6,9 +6,11 @@ name: test
 on:
   # Triggers the workflow on push or pull request events but only for the develop branch
   push:
-    branches: [ develop ]
+    branches: [master, develop]
+    tags:
+      - "*"
   pull_request:
-    branches: [ develop ]
+    branches: [master, develop]
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -22,21 +24,21 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [ 16.x, 17.x ]
+        node-version: [18.x, 20.x]
 
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
 
       - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
 
       - name: Get yarn cache directory path
         id: yarn-cache-dir-path
-        run: echo "::set-output name=dir::$(yarn cache dir)"
+        run: echo "dir=$(yarn cache dir)" >> $GITHUB_OUTPUT
 
-      - uses: actions/cache@v2
+      - uses: actions/cache@v3
         id: yarn-cache # use this to check for `cache-hit` (`steps.yarn-cache.outputs.cache-hit != 'true'`)
         with:
           path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
@@ -47,27 +49,38 @@ jobs:
       - name: Update npm and install packages
         run: |
           npm i -g npm@latest yarn@latest
-          npm install
+          yarn install
 
-      - name: Test with jest for Node.js
+      - name: Test with jest
         run: yarn test
 
-      - name: Test with karma for browsers
-        run: yarn karma
+      - name: Test with jest with webcrypto shim for browsers
+        run: yarn jest:web
 
-#      - name: Install lcov
-#        run: sudo apt install lcov
-#    # Steps represent a sequence of tasks that will be executed as part of the job
-#    steps:
-#      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-#      - uses: actions/checkout@v2
-#
-#      # Runs a single command using the runners shell
-#      - name: Run a one-line script
-#        run: echo Hello, world!
-#
-#      # Runs a set of commands using the runners shell
-#      - name: Run a multi-line script
-#        run: |
-#          echo Add other actions to build,
-#          echo test, and deploy your project.
+      - name: Install lcov and merge coverage info
+        run: |
+          sudo apt install lcov
+          find ./coverage  -name lcov.info -exec echo -a {} \; | xargs lcov -o ./coverage/merged-lcov.info
+
+      - name: Upload coverage to Codecov
+        uses: codecov/codecov-action@v3
+        with:
+          files: ./coverage/merged-lcov.info
+
+  publish:
+    needs: test
+    if: startsWith(github.event.ref, 'refs/tags/v')
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      # Setup .npmrc file to publish to npm
+      - uses: actions/setup-node@v3
+        with:
+          node-version: "20.x"
+          registry-url: "https://registry.npmjs.org"
+          # Defaults to the user or organization that owns the workflow file
+          scope: "@octocat"
+      - run: yarn
+      - run: npm publish
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
