@@ -2,8 +2,8 @@
 # Generate Password TS
 
 [![npm version](https://badge.fury.io/js/generate-password-ts.svg)](https://badge.fury.io/js/generate-password-ts)
-[![CircleCI](https://circleci.com/gh/junkurihara/generate-password.svg?style=svg)](https://circleci.com/gh/junkurihara/generate-password)
 [![codecov](https://codecov.io/gh/junkurihara/generate-password/branch/develop/graph/badge.svg)](https://codecov.io/gh/junkurihara/generate-password)
+![Unit Test](https://github.com/junkurihara/generate-password/actions/workflows/ci-test.yml/badge.svg)
 
 > This library `generate-password-ts` was forked from the original Node.js version `generate-password`:
 > [https://github.com/brendanashworth/generate-password](https://github.com/brendanashworth/generate-password).
