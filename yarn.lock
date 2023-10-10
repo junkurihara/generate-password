@@ -1114,10 +1114,10 @@
   resolved "https://registry.yarnpkg.com/@types/tough-cookie/-/tough-cookie-4.0.2.tgz#6286b4c7228d58ab7866d19716f3696e03a09397"
   integrity sha512-Q5vtl1W5ue16D+nIaW8JWebSSraJVlK+EthKn7e7UcD4KWsaSJ8BqGPXNaPghgtcn/fhvrN17Tv8ksUsQpiplw==
 
-"@types/underscore@1.11.10":
-  version "1.11.10"
-  resolved "https://registry.yarnpkg.com/@types/underscore/-/underscore-1.11.10.tgz#9f4f9ee3f9093791f2f302b6f1d8f23e4cc0296f"
-  integrity sha512-qDaHavz423J+9c48y2lRoA4HwsucQ4xgU+7L3nCSJ4TjB/CGl30nPZhRa+ssUgbJdg38JESjZFkY5K52aXlAYA==
+"@types/underscore@1.11.11":
+  version "1.11.11"
+  resolved "https://registry.yarnpkg.com/@types/underscore/-/underscore-1.11.11.tgz#d687e649dd7f3c4045b71f756cd80892d55d3bb1"
+  integrity sha512-J/ZgSP9Yv0S+wfUfeRh9ynktcCvycfW4S9NbzkFdiHLBth+Ctdy5nYg3ZAqUKq7v3gcJce6rXo41zJV6IqsXsQ==
 
 "@types/yargs-parser@*":
   version "20.2.0"
