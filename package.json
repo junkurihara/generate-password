@@ -46,7 +46,7 @@
     "jest-environment-jsdom": "29.7.0",
     "ts-jest": "29.2.5",
     "ts-loader": "9.5.1",
-    "typescript": "5.6.2",
+    "typescript": "5.6.3",
     "underscore": "1.13.7",
     "webpack": "5.95.0",
     "webpack-cli": "5.1.4"
