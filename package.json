@@ -44,7 +44,7 @@
     "eslint": "9.32.0",
     "jest": "30.0.5",
     "jest-environment-jsdom": "30.0.5",
-    "ts-jest": "29.4.0",
+    "ts-jest": "29.4.1",
     "ts-loader": "9.5.2",
     "typescript": "5.9.2",
     "underscore": "1.13.7",
