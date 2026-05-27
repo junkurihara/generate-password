@@ -49,7 +49,7 @@
     "typescript": "6.0.3",
     "underscore": "1.13.8",
     "webpack": "5.107.2",
-    "webpack-cli": "7.0.2"
+    "webpack-cli": "7.0.3"
   },
   "dependencies": {
     "js-crypto-random": "1.0.5"
