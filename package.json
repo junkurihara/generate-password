@@ -45,7 +45,7 @@
     "jest": "30.4.2",
     "jest-environment-jsdom": "30.4.1",
     "ts-jest": "29.4.11",
-    "ts-loader": "9.5.7",
+    "ts-loader": "9.6.0",
     "typescript": "6.0.3",
     "underscore": "1.13.8",
     "webpack": "5.107.2",
