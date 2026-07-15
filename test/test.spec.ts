@@ -1,5 +1,4 @@
-// https://github.com/mtiller/ts-jest-sample
-
+import {describe, expect, it} from 'vitest';
 import {uniq} from 'underscore';
 import {getTestEnv} from './prepare';
 const env = getTestEnv();

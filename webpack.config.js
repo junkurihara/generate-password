@@ -3,7 +3,11 @@ const path = require('path');
 const base = require('./webpack.baseconfig');
 
 const config = {
-  entry: ['./src/index.ts'],
+  // Bundle the JavaScript emitted by tsc into ./dist instead of transpiling
+  // TypeScript sources directly: ts-loader depends on the TypeScript JS API,
+  // which typescript@7 (native compiler) does not provide. Run `pnpm run tsc`
+  // before webpack (the `build` script does this).
+  entry: ['./dist/index.js'],
 
   output: {
     filename: `${base.libName}.bundle.js`,
@@ -15,26 +19,11 @@ const config = {
     globalObject: 'this' // for node js import
   },
   resolve: {
-    extensions: ['.ts', '.tsx', '.js', '.jsx' ],
+    extensions: ['.js'],
     modules: ['node_modules'],
     fallback:{
       'crypto': false
     }
-  },
-  module: {
-    rules: [
-      {
-        test: /\.ts$/,
-        use: {
-          loader: 'ts-loader',
-          options: {
-            transpileOnly: true,
-            configFile: 'webpack.tsconfig.json', // for tree shaking https://mizchi.dev/202006101314-switch-tsconfig-on-webpack
-          },
-        },
-        exclude: path.join(__dirname, 'node_modules') // exclude: /node_modules/
-      },
-    ],
   }
 };
 

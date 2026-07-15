@@ -24,38 +24,28 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [24.x]
+        node-version: [24.x, 26.x]
 
     steps:
       - uses: actions/checkout@v7
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@v4
 
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v7
         with:
           node-version: ${{ matrix.node-version }}
+          cache: pnpm
 
-      - name: Get yarn cache directory path
-        id: yarn-cache-dir-path
-        run: echo "dir=$(yarn cache dir)" >> $GITHUB_OUTPUT
+      - name: Install packages
+        run: pnpm install --frozen-lockfile
 
-      - uses: actions/cache@v6
-        id: yarn-cache # use this to check for `cache-hit` (`steps.yarn-cache.outputs.cache-hit != 'true'`)
-        with:
-          path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
-          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-yarn-
+      - name: Test with vitest
+        run: pnpm run test
 
-      - name: Update npm and install packages
-        run: |
-          npm i -g npm@latest yarn@latest
-          yarn install
-
-      - name: Test with jest
-        run: yarn test
-
-      - name: Test with jest with webcrypto shim for browsers
-        run: yarn jest:web
+      - name: Test with vitest with webcrypto shim for browsers
+        run: pnpm run test:web
 
       - name: Install lcov and merge coverage info
         run: |
@@ -73,6 +63,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v7
+      - name: Install pnpm
+        uses: pnpm/action-setup@v4
       # Setup .npmrc file to publish to npm
       - uses: actions/setup-node@v7
         with:
@@ -80,8 +72,8 @@ jobs:
           registry-url: "https://registry.npmjs.org"
           # Defaults to the user or organization that owns the workflow file
           scope: "@octocat"
-      - run: yarn
-      - run: yarn build
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm run build
       - run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
