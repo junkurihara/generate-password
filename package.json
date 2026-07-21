@@ -32,7 +32,7 @@
     "url": "https://github.com/junkurihara/generate-password/issues"
   },
   "homepage": "https://github.com/junkurihara/generate-password",
-  "packageManager": "pnpm@11.15.0",
+  "packageManager": "pnpm@11.15.1",
   "devDependencies": {
     "@types/node": "26.1.1",
     "@types/underscore": "1.13.0",
