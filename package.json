@@ -45,7 +45,7 @@
     "typescript": "7.0.2",
     "underscore": "1.13.8",
     "vitest": "4.1.10",
-    "webpack": "5.108.4",
+    "webpack": "5.109.2",
     "webpack-cli": "7.2.1"
   },
   "dependencies": {
