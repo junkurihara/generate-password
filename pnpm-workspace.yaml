@@ -1,4 +1,5 @@
 # pnpm configuration (pnpm v11 reads settings from this file, not package.json#pnpm)
 # unrs-resolver ships prebuilt binaries; its postinstall build script is unnecessary.
+minimumReleaseAge: 0
 allowBuilds:
   unrs-resolver: false
