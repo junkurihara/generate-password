@@ -47,10 +47,10 @@ importers:
         version: 4.1.11(@types/node@26.4.0)(@vitest/coverage-v8@4.1.11)(jsdom@30.0.1)(vite@8.1.4(@types/node@26.4.0)(terser@5.51.2))
       webpack:
         specifier: 5.110.1
-        version: 5.110.1(lightningcss@1.32.0)(postcss@8.5.19)(webpack-cli@7.2.2)
+        version: 5.110.1(lightningcss@1.32.0)(postcss@8.5.19)(webpack-cli@7.2.3)
       webpack-cli:
-        specifier: 7.2.2
-        version: 7.2.2(json5@2.2.3)(webpack@5.110.1)
+        specifier: 7.2.3
+        version: 7.2.3(json5@2.2.3)(webpack@5.110.1)
 
 packages:
 
@@ -1669,14 +1669,14 @@ packages:
     resolution: {integrity: sha512-BMhLD/Sw+GbJC21C/UgyaZX41nPt8bUTg+jWyDeg7e7YN4xOM05YPSIXceACnXVtqyEw/LMClUQMtMZ+PGGpqQ==}
     engines: {node: '>=20'}
 
-  webpack-cli@7.2.2:
-    resolution: {integrity: sha512-lD0pALneslq8FfV+rwvm1BMW0AFAJrHHhNupAGN4asYjMvqrtRsenU4iKpiBo09gS4ntMxKGUxl9jhTEzVt0oA==}
+  webpack-cli@7.2.3:
+    resolution: {integrity: sha512-vDFU7jrfCctnN7jJQWPl+V26B51GLp11prVZXg50oeonsgeBzSTJEWmXkjHsOjTgMjlPOQM8GWLh33X9RN/0ow==}
     engines: {node: '>=20.9.0'}
     hasBin: true
     peerDependencies:
       js-yaml: ^4.0.0 || ^5.0.0
       json5: ^2.2.3
-      toml: ^3.0.0 || ^4.0.0
+      toml: ^3.0.0 || ^4.0.0 || ^5.0.0
       webpack: ^5.101.0
       webpack-bundle-analyzer: ^4.0.0 || ^5.0.0
       webpack-dev-server: ^5.0.0 || ^6.0.0
@@ -2826,7 +2826,7 @@ snapshots:
       jest-worker: 27.5.1
       schema-utils: 4.3.3
       terser: 5.51.2
-      webpack: 5.110.1(lightningcss@1.32.0)(postcss@8.5.19)(webpack-cli@7.2.2)
+      webpack: 5.110.1(lightningcss@1.32.0)(postcss@8.5.19)(webpack-cli@7.2.3)
     optionalDependencies:
       lightningcss: 1.32.0
       postcss: 8.5.19
@@ -3211,7 +3211,7 @@ snapshots:
 
   webidl-conversions@8.0.1: {}
 
-  webpack-cli@7.2.2(json5@2.2.3)(webpack@5.110.1):
+  webpack-cli@7.2.3(json5@2.2.3)(webpack@5.110.1):
     dependencies:
       '@discoveryjs/json-ext': 1.1.0
       commander: 14.0.3
@@ -3220,7 +3220,7 @@ snapshots:
       import-local: 3.2.0
       interpret: 3.1.1
       rechoir: 0.8.0
-      webpack: 5.110.1(lightningcss@1.32.0)(postcss@8.5.19)(webpack-cli@7.2.2)
+      webpack: 5.110.1(lightningcss@1.32.0)(postcss@8.5.19)(webpack-cli@7.2.3)
       webpack-merge: 6.0.1
     optionalDependencies:
       json5: 2.2.3
@@ -3233,7 +3233,7 @@ snapshots:
 
   webpack-sources@3.5.1: {}
 
-  webpack@5.110.1(lightningcss@1.32.0)(postcss@8.5.19)(webpack-cli@7.2.2):
+  webpack@5.110.1(lightningcss@1.32.0)(postcss@8.5.19)(webpack-cli@7.2.3):
     dependencies:
       '@types/estree': 1.0.9
       '@types/json-schema': 7.0.15
@@ -3255,7 +3255,7 @@ snapshots:
       watchpack: 2.5.2
       webpack-sources: 3.5.1
     optionalDependencies:
-      webpack-cli: 7.2.2(json5@2.2.3)(webpack@5.110.1)
+      webpack-cli: 7.2.3(json5@2.2.3)(webpack@5.110.1)
     transitivePeerDependencies:
       - '@minify-html/node'
       - '@swc/core'
