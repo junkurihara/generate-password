@@ -2,4 +2,7 @@
 # unrs-resolver ships prebuilt binaries; its postinstall build script is unnecessary.
 minimumReleaseAge: 0
 allowBuilds:
+  # pnpm (devDependency, kept there so Dependabot can update it) only relinks its bin
+  # to a native binary in its install script; the Node.js fallback works without it.
+  pnpm: false
   unrs-resolver: false

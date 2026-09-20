@@ -1,0 +1,39 @@
+# Dependabot configuration. This replaces the former Renovate setup.
+# Pull requests are reviewed and merged manually; no automerge is configured.
+version: 2
+updates:
+  # npm dependencies. pnpm is covered by the "npm" ecosystem; the pnpm version
+  # is taken from the "packageManager" field in package.json.
+  - package-ecosystem: "npm"
+    directory: "/"
+    schedule:
+      interval: "daily"
+      time: "22:00"
+      timezone: "Asia/Tokyo"
+    # package.json pins exact versions; bump the pinned version instead of widening ranges.
+    versioning-strategy: "increase"
+    open-pull-requests-limit: 10
+    assignees:
+      - "junkurihara"
+    labels:
+      - "update-dependencies"
+    groups:
+      vitest:
+        patterns:
+          - "vitest"
+          - "@vitest/*"
+      typescript-eslint:
+        patterns:
+          - "@typescript-eslint/*"
+
+  # GitHub Actions used in .github/workflows
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "daily"
+      time: "22:00"
+      timezone: "Asia/Tokyo"
+    assignees:
+      - "junkurihara"
+    labels:
+      - "update-dependencies"
